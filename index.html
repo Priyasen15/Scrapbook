@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Gift For Shanmugha Varshini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:wght@600;700&family=Kalam:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music/birthday.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="desk-grain" aria-hidden="true"></div>
+  <div class="petal-layer" id="petalLayer" aria-hidden="true"></div>
+  <canvas id="celebrationCanvas" aria-hidden="true"></canvas>
+
+  <header class="topbar" aria-label="Scrapbook progress">
+    <button class="icon-button" id="musicToggle" type="button" aria-label="Toggle music">
+      <span class="music-icon">♪</span>
+    </button>
+    <div class="progress-wrap">
+      <span id="pageNumber">Cover</span>
+      <div class="progress-dots" id="progressDots"></div>
+    </div>
+  </header>
+
+  <main class="stage">
+    <div class="book-shell" id="bookShell">
+      <div class="book-spine" aria-hidden="true"></div>
+      <div id="book" class="book">
+        <section class="page active cover-page" data-label="Cover">
+          <div class="cover">
+            <span class="cover-kicker">Memory book</span>
+            <h1>A Little Gift</h1>
+            <h2>for Shanmugha Varshini</h2>
+            <p>
+              This isn't just a birthday wish. It is a little scrapbook filled with
+              some of my favourite memories that we created together.
+            </p>
+            <button class="primary nextBtn" type="button">Open scrapbook</button>
+          </div>
+        </section>
+
+        <section class="page note-page" data-label="Wish">
+          <article class="paper-note center-note">
+            <p class="chapter-label">Chapter 01</p>
+            <h1>Happy 20th Birthday</h1>
+            <p>
+              First of all, happy birthday, Shanmugha Varshini. I wish this year brings
+              you good health, endless happiness, lots of laughter, beautiful memories,
+              and every dream you have ever wished for.
+            </p>
+            <p>May life always be kind to you.</p>
+            <button class="primary nextBtn" type="button">Begin the pages</button>
+          </article>
+        </section>
+
+        <section class="page envelope-page" data-label="Letter">
+          <div class="envelope-scene">
+            <button class="envelope" id="envelope" type="button" aria-label="Open letter">
+              <span class="envelope-flap"></span>
+              <span class="envelope-body"></span>
+              <span class="envelope-card">Click to open</span>
+            </button>
+            <article class="paper-note letter-card" id="letterContent">
+              <p class="chapter-label">Before the memories</p>
+              <h1>A Small Letter</h1>
+              <p>
+                I really wished I could celebrate today with you. Since I could not,
+                I thought of giving you something different. A little journey through
+                our memories. I hope you smile while going through it.
+              </p>
+              <button class="primary nextBtn" type="button">Start our journey</button>
+            </article>
+          </div>
+        </section>
+
+        <section class="page scrapbook-page" data-label="Beginning">
+          <article class="scrap-layout intro-memory">
+            <div class="chapter-copy">
+              <p class="chapter-label">Chapter 02</p>
+              <h1>Do You Remember These?</h1>
+              <p>Our friendship started with these small, priceless memories.</p>
+            </div>
+            <div class="pinboard two-photo">
+              <figure class="polaroid tilt-left">
+                <span class="tape tape-yellow"></span>
+                <img src="images/p1_1.jpg" alt="A beginning memory">
+              </figure>
+              <figure class="polaroid tilt-right">
+                <span class="tape tape-blue"></span>
+                <img src="images/p1_2.jpg" alt="Another beginning memory">
+              </figure>
+            </div>
+            <div class="torn-note restored-note">
+              <h2>The Beginning</h2>
+              <p>
+                Hahahahaha... how cute are these pictures! Every time I look at them,
+                I am reminded of how our friendship began.
+              </p>
+              <p>
+                Thank you, J1 classroom, for giving me one of the most wonderful people
+                in my life. Sometimes I really wish we could go back to those school days,
+                sitting beside each other, laughing over absolutely nothing, chatting
+                endlessly, and making memories without even realizing how precious they
+                would become.
+              </p>
+              <p>
+                Those days will always have a special place in my heart.
+              </p>
+            </div>
+            <button class="primary nextBtn" type="button">Next memory</button>
+          </article>
+        </section>
+
+        <section class="page scrapbook-page" data-label="Holidays">
+          <article class="scrap-layout">
+            <div class="chapter-copy">
+              <p class="chapter-label">Chapter 03</p>
+              <h1>Our Seasonal Meetups</h1>
+            </div>
+            <div class="pinterest-grid grid-four">
+              <img src="images/p2_1.jpg" alt="Holiday memory one">
+              <img src="images/p2_2.jpg" alt="Holiday memory two">
+              <img src="images/p2_3.jpg" alt="Holiday memory three">
+              <img src="images/p2_4.jpg" alt="Holiday memory four">
+            </div>
+            <div class="torn-note restored-note">
+              <p>
+                I really love this holiday season because it means one thing: I get to
+                meet my Bro.
+              </p>
+              <p>
+                Every holiday hangout, from our first year of college until now, whether
+                at your house or mine, has become one of my favourite traditions. Not once
+                have we ever thought, "Let's skip this time."
+              </p>
+              <p>
+                Whenever holidays arrive, we somehow find our way back to each other.
+                Thank you for making this little tradition so special. Let's keep doing
+                this forever.
+              </p>
+            </div>
+            <button class="primary nextBtn" type="button">Next memory</button>
+          </article>
+        </section>
+
+        <section class="page scrapbook-page" data-label="18th">
+          <article class="scrap-layout">
+            <div class="chapter-copy">
+              <p class="chapter-label">Chapter 04</p>
+              <h1>Your 18th Birthday</h1>
+            </div>
+            <div class="pinterest-grid grid-three">
+              <img src="images/p3_1.jpg" alt="18th birthday memory one">
+              <img src="images/p3_2.jpg" alt="18th birthday memory two">
+              <img src="images/p3_3.jpg" alt="18th birthday memory three">
+            </div>
+            <div class="torn-note restored-note">
+              <p>
+                Two years ago, on this very day, I had the chance to celebrate your
+                birthday with your family.
+              </p>
+              <p>
+                Honestly, I never felt like a guest. I felt like I was celebrating with
+                my own family. Cutting the cake, laughing together, and enjoying every
+                little moment, those memories are still so special to me.
+              </p>
+              <p>
+                I hope this birthday is just as wonderful. And excuse me, you are not a
+                teenager anymore!
+              </p>
+            </div>
+            <button class="primary nextBtn" type="button">Next memory</button>
+          </article>
+        </section>
+
+        <section class="page scrapbook-page" data-label="Malls">
+          <article class="scrap-layout">
+            <div class="chapter-copy">
+              <p class="chapter-label">Chapter 05</p>
+              <h1>Memorable Mall Hangouts</h1>
+            </div>
+            <div class="pinterest-grid grid-five">
+              <img src="images/p4_1.jpg" alt="Mall hangout memory one">
+              <img src="images/p4_2.jpg" alt="Mall hangout memory two">
+              <img src="images/p4_3.jpg" alt="Mall hangout memory three">
+              <img src="images/p4_4.jpg" alt="Mall hangout memory four">
+              <img src="images/p4_5.jpg" alt="Mall hangout memory five">
+            </div>
+            <div class="torn-note restored-note">
+              <p>
+                So here comes one of the best memories of our friendship.
+              </p>
+              <p>
+                These are some of the moments we enjoyed together at Vishal D Mall and
+                Phoenix Mall. I always loved coming to places just to spend time with you.
+                Even if we only got one hour together, it still felt worth the entire
+                journey.
+              </p>
+              <p>
+                I never wanted to miss a chance to meet you. The play area at Vishal D
+                Mall was honestly so much fun. Let's visit many more places together and
+                create even crazier memories.
+              </p>
+            </div>
+            <button class="primary nextBtn" type="button">Next memory</button>
+          </article>
+        </section>
+
+        <section class="page scrapbook-page" data-label="Date">
+          <article class="scrap-layout">
+            <div class="chapter-copy">
+              <p class="chapter-label">Chapter 06</p>
+              <h1>Definitely a Date</h1>
+            </div>
+            <div class="pinterest-grid grid-five">
+              <img src="images/p5_1.jpg" alt="A favourite hangout memory one">
+              <img src="images/p5_2.jpg" alt="A favourite hangout memory two">
+              <img src="images/p5_3.jpg" alt="A favourite hangout memory three">
+              <img src="images/p5_4.jpg" alt="A favourite hangout memory four">
+              <img src="images/p5_5.jpg" alt="A favourite hangout memory five">
+            </div>
+            <div class="torn-note restored-note">
+              <p>
+                OHHH!! This has to be one of my favourite hangouts ever.
+              </p>
+              <p>
+                Watching a movie together, having an amazing lunch, walking around
+                Saravana Stores, and simply spending the day together. Everything about
+                that day felt special.
+              </p>
+              <p>
+                I still laugh thinking about us shopping as if we were buying things for
+                our own house. One day, we are definitely buying homes next to each other,
+                going grocery shopping, annoying each other every day, and growing old
+                together as neighbours. Deal?
+              </p>
+            </div>
+            <button class="primary nextBtn" type="button">Next memory</button>
+          </article>
+        </section>
+
+        <section class="page scrapbook-page" data-label="Calls">
+          <article class="scrap-layout">
+            <div class="chapter-copy">
+              <p class="chapter-label">Chapter 07</p>
+              <h1>Endless Calls</h1>
+            </div>
+            <div class="pinterest-grid grid-three">
+              <img src="images/p6_1.jpg" alt="Call memory one">
+              <img src="images/p6_2.jpg" alt="Call memory two">
+              <img src="images/p6_3.jpg" alt="Call memory three">
+            </div>
+            <div class="torn-note restored-note">
+              <p>
+                And here comes one of my favourite parts of our friendship: our endless
+                calls.
+              </p>
+              <p>
+                Those late-night conversations, video calls, laughing over random things,
+                sharing every little update from hostel, and talking until midnight slowly
+                became a part of everyday life.
+              </p>
+              <p>
+                You somehow turned a person who never liked phone calls into someone who
+                actually waits for yours. Let's promise each other one thing: no matter
+                where life takes us, let's never stop making these calls.
+              </p>
+            </div>
+            <button class="primary nextBtn" type="button">One last letter</button>
+          </article>
+        </section>
+
+        <section class="page note-page long-letter-page" data-label="Heart">
+          <article class="paper-note long-letter">
+            <p class="chapter-label">One last thing</p>
+            <h1>A Letter From My Heart</h1>
+            <div class="letter-scroll">
+              <p>
+                So, I hope I made you remember every beautiful moment we have shared
+                together. And now comes the final part.
+              </p>
+              <p>
+                You have no idea how happy and grateful I am to have a friend like you in
+                my life, Shanmugha.
+              </p>
+              <p>
+                I am kind of an avoidant person. Your constant check-ups, your care, and
+                the way you never let go of me are the reasons this friendship is still so
+                beautiful even after five years.
+              </p>
+              <p>
+                I have realized that I usually get exhausted with relationships and slowly
+                distance myself from people. I never really felt a bond as strong as ours
+                in the past or even now in hostel.
+              </p>
+              <p>
+                But with you, it is only because of YOU that our friendship still exists
+                today.
+              </p>
+              <p>
+                Because of you, I proudly get to say, "I have a best friend, and that's
+                YOU." I really owe you a lot for never letting me quietly disappear from
+                your life and for making this friendship so beautiful.
+              </p>
+              <p>
+                I am also grateful that because of you I got another lovely family.
+              </p>
+              <p>
+                To our cool Vidhya Aunty, who has always supported me since our JEE days,
+                and to our lovable Aachi, whose warm smile, hugs, and welcome always make
+                me feel at home whenever I visit. Those little moments mean more than you
+                know.
+              </p>
+              <p>
+                I hope this bond stays with us till the very end. No matter where life
+                takes us, no matter how busy life becomes, I hope we always remain BRO.
+              </p>
+              <p>
+                Thank you for staying. For caring. For understanding me. For choosing this
+                friendship.
+              </p>
+              <p>
+                Happy 20th Birthday once again, Bro.
+              </p>
+              <p class="signature">Love,<br>Priya</p>
+            </div>
+            <button class="primary nextBtn" type="button">Final surprise</button>
+          </article>
+        </section>
+
+        <section class="page final-page" data-label="Final">
+          <article class="final-card">
+            <p class="chapter-label">The celebration page</p>
+            <h1>Happy Birthday, Bro</h1>
+            <h2>Shanmugha Varshini</h2>
+            <p>
+              Thank you for taking this little journey through our memories. I hope every
+              page made you smile. May your twenties be filled with happiness, success,
+              good health, new adventures, and countless beautiful memories.
+            </p>
+            <p>
+              Never stop smiling. Never stop being YOU. Happy Birthday once again.
+            </p>
+            <div class="cake" aria-hidden="true">
+              <span class="flame"></span>
+            </div>
+            <button class="primary" id="restart" type="button">Relive our story</button>
+          </article>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
